@@ -105,6 +105,25 @@ int multiplication(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, D
         count++;
         temp2 = temp2->prev;
     }
+	
     copy_list(headR, tailR, &headR1, &tailR1);
+
+	Dlist *temp = *headR;
+	int count1 = 0;
+	while (temp->next != NULL)
+	{
+		if(temp->data > 0)
+		{
+			break;
+		}
+		count1++;
+		temp = temp->next;
+	}
+	
+	while(count1)
+	{
+		dl_delete_first(headR, tailR);
+		count1--;
+	}
 }
 

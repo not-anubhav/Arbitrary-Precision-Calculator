@@ -75,5 +75,23 @@ int addition(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist *
 	{
 		dl_insert_first(headR, tailR, carry);
 	}
+
+	Dlist *temp = *headR;
+	int count = 0;
+	while (temp->next != NULL)
+	{
+		if(temp->data > 0)
+		{
+			break;
+		}
+		count++;
+		temp = temp->next;
+	}
+	
+	while(count)
+	{
+		dl_delete_first(headR, tailR);
+		count--;
+	}
 }
 

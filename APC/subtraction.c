@@ -55,4 +55,22 @@ int subtraction(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlis
         temp1 = temp1->prev;
         temp2 = temp2->prev;
     }
+
+	Dlist *temp = *headR;
+	int count = 0;
+	while (temp->next != NULL)
+	{
+		if(temp->data > 0)
+		{
+			break;
+		}
+		count++;
+		temp = temp->next;
+	}
+	
+	while(count)
+	{
+		dl_delete_first(headR, tailR);
+		count--;
+	}
 }

@@ -20,6 +20,7 @@ typedef struct node
 int read_validate(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, char *operator, char *operand1, char *operand2, int *flagOper1, int *flagOper2, int *swap);
 int dl_insert_first(Dlist **head, Dlist **tail, int data);
 int dl_insert_last(Dlist **head, Dlist **tail, int data);
+int dl_delete_first(Dlist **head, Dlist **tail);
 int addition(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR);
 int subtraction(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR);
 int multiplication(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR);
