@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 			printf("%d\n", result);
 		else if(flagOper2 == 1) // If flag is 1 that means number is negative
 		{
-			printf("%d\n", result);
+			printf("-%d\n", result);
 		}
 		break;
 	default:
