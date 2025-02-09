@@ -2,6 +2,7 @@
 
 int copy_list(Dlist **headR1, Dlist **tailR1, Dlist **headR3, Dlist **tailR3)
 {
+    /* Copy Data from R3 to R1 */
     Dlist *temp1 = *headR1;
     Dlist *temp2 = *headR3;
 

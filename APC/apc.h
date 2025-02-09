@@ -7,16 +7,17 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define SUCCESS 0;
-#define FAILURE -1;
-#define LIST_EMPTY -2;
+#define SUCCESS 0
+#define FAILURE -1
+#define LIST_EMPTY -2
+/* Node Structure Prototype*/
 typedef struct node
 {
 	int data;
 	struct node *prev;
 	struct node *next;
 }Dlist;
-
+/* Function Declarations */
 int read_validate(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, char *operator, char *operand1, char *operand2, int *flagOper1, int *flagOper2, int *swap);
 int dl_insert_first(Dlist **head, Dlist **tail, int data);
 int dl_insert_last(Dlist **head, Dlist **tail, int data);

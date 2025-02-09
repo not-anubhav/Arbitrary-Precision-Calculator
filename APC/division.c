@@ -6,7 +6,7 @@ int division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist *
     Dlist *com2 = *tail2;
     int c1 = 0, c2 = 0;
     int count = 0;
-
+    /* Count the number of digits in each number */
     while(com1 != NULL)
     {
         c1++;
@@ -18,7 +18,7 @@ int division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist *
         c2++;
         com2 = com2->prev;
     }
-
+    /* Insert 0's at first to match the number of digit count in the linked list*/
     if(c1 < c2)
     {
         count = 0;
@@ -32,6 +32,7 @@ int division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist *
             c2++;
         }
     }
+    /* If count is same then compare numbers */
     else if(c2 == c1)
     {
         com1 = *head1;
@@ -64,19 +65,21 @@ int division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist *
 
     while(compare_lists(*head1, *tail1, *head2, *tail2) >= 0)
     {
-        subtraction(head1, tail1, head2, tail2, headR, tailR);
+        subtraction(head1, tail1, head2, tail2, headR, tailR); /* Call substraction function inside a loop and pass
+        operand 1 and operand 2 as argument*/
         //print_list(*head1);
-        dl_delete_list(head1, tail1);
+        dl_delete_list(head1, tail1); /* Delete the list containing operand 1 and replace it with the result of 
+        substraction operation */
         copy_list(head1, tail1, headR, tailR);
-        dl_delete_list(headR, tailR);
-        temp1 = *head1;
+        dl_delete_list(headR, tailR); // Delete the result list for storing the resultant value for next digit in list
+        temp1 = *head1; // Update the pointers
         temp2 = *tail1;
-        count++;
+        count++; // Increment the count based on number of times substraction operation is called
     }
-    return count;
+    return count; // return count
 
 }
-
+/* Function for comparing operand 1 and operand 2 */
 int compare_lists(Dlist *head1, Dlist *tail1, Dlist *head2, Dlist *tail2)
 {
     while(head1 != NULL && head2 != NULL)
